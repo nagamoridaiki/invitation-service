@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator fabbrica {
+  provider = "prisma-fabbrica"
+  output   = "../test/__generated__/fabbrica"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model gorp_migrations {
+  id         String    @id @db.VarChar(255)
+  applied_at DateTime? @db.DateTime(0)
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model invitation {
+  invitation_id   Int    @id @default(autoincrement()) @db.UnsignedInt
+  invitation_name String @unique(map: "invitation_name") @db.VarChar(254)
+  user_id         Int?
+}
