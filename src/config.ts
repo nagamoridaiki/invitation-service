@@ -18,7 +18,6 @@ export const getConfig = ({ port, host }: ConfigOptions = {}): GrpcOptions => {
       protoPath: path.resolve(
         __dirname,
         '../node_modules/@nagamoridaiki/invitation-proto/proto/invitation.proto',
-        '/Users/kojinpc/src/invitation-service/node_modules/@nagamoridaiki/invitation-proto/proto/invitation.proto'
       ),
       url: `${_host}:${_port}`,
       loader: {

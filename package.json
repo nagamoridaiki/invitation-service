@@ -20,7 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nagamoridaiki/invitation-proto": "^1.0.8",
+    "@nagamoridaiki/invitation-proto": "^1.0.9",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/microservices": "^9.2.1",

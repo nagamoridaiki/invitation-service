@@ -698,10 +698,10 @@
     "semver" "^7.3.5"
     "tar" "^6.1.11"
 
-"@nagamoridaiki/invitation-proto@^1.0.8":
-  "integrity" "sha512-7uKCdIfm+UGmz+8iobnd/rNTyPcWyir8oTlXy/a5QHcofZo0boxM74m7O4KnVIij5Seupik+Msrs38bDZNxeUw=="
-  "resolved" "https://npm.pkg.github.com/download/@nagamoridaiki/invitation-proto/1.0.8/c619facdaaa62260cbca760eb6f31d41ae3c7d38"
-  "version" "1.0.8"
+"@nagamoridaiki/invitation-proto@^1.0.9":
+  "integrity" "sha512-Lk5qcGLCwKMRqoSiFzOJ/rKLd+DKxubLXQnVsYB6t3E0a4u3DiK7RgBZ3OPg4K0Sl1VhoNvcL40YbCZ9xZmQfQ=="
+  "resolved" "https://npm.pkg.github.com/download/@nagamoridaiki/invitation-proto/1.0.9/183f7a25367cee85a14728c780cd80df68da2928"
+  "version" "1.0.9"
   dependencies:
     "@grpc/grpc-js" "^1.9.3"
     "google-protobuf" "^3.21.2"
