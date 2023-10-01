@@ -1,3 +1,4 @@
+import { Catch } from '@nestjs/common';
 import { PRISMA_ERROR_CODE } from '../prisma';
 import {
   AlreadyExistsGrpcException,
@@ -6,12 +7,15 @@ import {
   NotFoundGrpcException,
   FailedPreconditionException,
 } from '../exceptions/grpc';
-import { BaseRpcExceptionFilter } from '@nestjs/microservices';
+import { BaseRpcExceptionFilter, RpcException } from '@nestjs/microservices';
+import { Prisma } from '@prisma/client';
 import { Observable, throwError } from 'rxjs';
 
+@Catch(Prisma.PrismaClientKnownRequestError)
 export class PrismaExceptionsFilter extends BaseRpcExceptionFilter {
-  catch(exception): Observable<any> {
-    const { code } = exception;
+  catch(exception: RpcException): Observable<any> {
+    if (exception instanceof Prisma.PrismaClientKnownRequestError) {
+      const { code } = exception;
       if (code === PRISMA_ERROR_CODE.UNIQUE_CONSTRAINT_FAILED) {
         return throwError(() => new AlreadyExistsGrpcException());
       } else if (code === PRISMA_ERROR_CODE.COLUMN_VALUE_TOO_LONG) {
@@ -25,6 +29,7 @@ export class PrismaExceptionsFilter extends BaseRpcExceptionFilter {
         console.log(`PrismaExceptionsFilter: ${code}`);
         return throwError(() => new InternalGrpcException());
       }
+    }
     return throwError(() => exception.getError());
   }
 }
