@@ -8,7 +8,7 @@ interface ConfigOptions {
 }
 
 export const getConfig = ({ port, host }: ConfigOptions = {}): GrpcOptions => {
-  const _port = typeof port === 'string' ? port : '50052';
+  const _port = typeof port === 'string' ? port : '50055';
   const _host = typeof host === 'string' ? host : '0.0.0.0';
 
   return addReflectionToGrpcConfig({

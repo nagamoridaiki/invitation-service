@@ -1,4 +1,4 @@
-// import * as dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 import * as path from 'path';
 import * as fs from 'fs';
 import { NestFactory } from '@nestjs/core';
@@ -14,7 +14,7 @@ function loadEnv() {
     path.resolve(__dirname, `../.env`);
   if (fs.existsSync(envFile)) {
     console.log(`Loading env file: ${envFile}`);
-    //dotenv.config({ path: envFile, override: true });
+    dotenv.config({ path: envFile, override: true });
   }
 }
 

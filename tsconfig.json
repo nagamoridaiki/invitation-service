@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
+    "removeComments": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
@@ -11,11 +10,15 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "allowJs": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
+    "strict": true,
+    "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "types": ["@types/jest", "@quramy/jest-prisma"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
   }
 }

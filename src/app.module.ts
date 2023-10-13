@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { InvitationController } from './invitaion.controller';
+import { InvitationController } from './invitation.controller';
 import { InvitationService } from './invitation.service';
 
 @Module({
