@@ -3,8 +3,7 @@ import { InvitationController } from './invitation.controller';
 import { InvitationService } from './invitation.service';
 
 @Module({
-  imports: [],
-  controllers: [InvitationController],
   providers: [InvitationService],
+  controllers: [InvitationController],
 })
-export class AppModule {}
+export class InvitationModule {}

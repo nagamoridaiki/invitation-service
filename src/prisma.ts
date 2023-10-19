@@ -1,0 +1,10 @@
+// Reference: https://www.prisma.io/docs/reference/api-reference/error-reference#error-codes
+export const PRISMA_ERROR_CODE = {
+  DATABASE_AUTHENTICATION_FAILED: 'P1000',
+  DATABASE_CONNECTION_FAILED: 'P1001',
+  DATABASE_CONNECTION_TIMEOUT: 'P1003',
+  COLUMN_VALUE_TOO_LONG: 'P2000',
+  UNIQUE_CONSTRAINT_FAILED: 'P2002',
+  FOREIGN_KEY_CONSTRAINT_FAILED: 'P2003',
+  NOT_FOUND_ERR: 'P2025',
+} as const;
