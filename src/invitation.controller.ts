@@ -4,7 +4,7 @@ import {
   GetInvitationRequest,
   GetInvitationResponse,
   invitationServiceControllerMethods
-} from '@nagamoridaiki/invitation-proto/gen/ts/invitation';
+} from './invitation';
 import * as methods from '@/domain/methods';
 
 @Controller()
@@ -15,7 +15,6 @@ export class InvitationController {
   async GetInvitation(
     request: GetInvitationRequest,
   ): Promise<GetInvitationResponse> {
-    console.log("テスト2")
     return methods.GetInvitation(this.invitationService, request)
   }
 }

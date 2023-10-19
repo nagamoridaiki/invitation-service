@@ -13,11 +13,6 @@ export const GetInvitation = async (
 	service: InvitationService,
 	request: GetInvitationRequest,
   ):Promise<GetInvitationResponse> => {
-	// const invitaion = {
-	// 	invitation_id: 1,
-	// 	invitation_name: "テスト",
-	// 	user_id: 1
-	// }
 
 	const { invitationId } = request;
 	const invitation = await service.invitaionService.getInvitation({
@@ -26,7 +21,7 @@ export const GetInvitation = async (
 
 	if (!invitation) {
 	throw new NotFoundGrpcException(
-		`PMCardIllustrator not found for illustrator_id: ${request.invitationId}`,
+		`Invitation not found for invitation_id: ${request.invitationId}`,
 	);
 	}
 
